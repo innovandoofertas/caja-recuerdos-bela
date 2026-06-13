@@ -1,11 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Caja de los Recuerdos</title>
+
+  <link rel="stylesheet" href="style.css?v=3" />
+</head>
 <body>
+
+  <audio id="music" loop>
+    <source src="assets/musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="floating-hearts"></div>
 
   <div class="container">
 
     <h1>La Caja de los Recuerdos</h1>
+
     <p class="subtitle">
       Algunos recuerdos están guardados bajo llave...
     </p>
+
+    <button class="music-btn" onclick="playMusic()">
+      Tocar música ♫
+    </button>
 
     <div class="box" id="box">
       <div class="lid"></div>
@@ -13,10 +33,13 @@
       <div class="lock" id="lock">🔒</div>
     </div>
 
-    <div class="hearts" id="hearts">♡ ♡ ♡</div>
+    <div class="hearts" id="hearts">
+      ♡ ♡ ♡
+    </div>
 
     <div class="card" id="game">
       <h2 id="questionTitle">Candado 1</h2>
+
       <p id="questionText"></p>
 
       <input
@@ -33,40 +56,24 @@
     </div>
 
     <div class="final hidden" id="final">
+
       <h2>La caja se abrió 💗</h2>
 
-      <p>
-        Felicidades, estorbo.
-      </p>
+      <div class="photo-row">
+        <img src="assets/foto1.jpg" alt="Recuerdo 1">
+        <img src="assets/foto2.jpg" alt="Recuerdo 2">
+        <img src="assets/foto3.jpg" alt="Recuerdo 3">
+      </div>
 
-      <p>
-        Si llegaste hasta aquí es porque todavía recuerdas esas pequeñas cosas
-        que para muchos no significan nada, pero para mí significan mucho.
-      </p>
-
-      <p>
-        Han pasado apenas 4 meses, pero en este tiempo me has regalado risas,
-        tranquilidad, compañía y muchos momentos que quiero seguir guardando.
-      </p>
-
-      <p>
-        Gracias por cada mensaje, cada abrazo y cada momento compartido.
-      </p>
-
-      <p>
-        Espero que esta pequeña caja pueda guardar algunos de nuestros recuerdos,
-        pero que los mejores todavía estén por venir.
-      </p>
-
-      <p class="big">
-        Te quiero mucho, Bela. ❤️
-      </p>
+      <p id="typedText" class="letter"></p>
 
       <h3>Sebastián</h3>
+
     </div>
 
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=3"></script>
 
 </body>
+</html>
