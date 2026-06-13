@@ -16,6 +16,18 @@ const questions = [
   }
 ];
 
+const finalMessage = `Felicidades, estorbo.
+
+Si llegaste hasta aquí es porque todavía recuerdas esas pequeñas cosas que para muchos no significan nada, pero para mí significan mucho.
+
+Han pasado apenas 4 meses, pero en este tiempo me has regalado risas, tranquilidad, compañía y muchos momentos que quiero seguir guardando.
+
+Gracias por cada mensaje, cada abrazo y cada momento compartido.
+
+Espero que esta pequeña caja pueda guardar algunos de nuestros recuerdos, pero que los mejores todavía estén por venir.
+
+Te quiero mucho, Bela. ❤️`;
+
 let current = 0;
 
 const questionTitle = document.getElementById("questionTitle");
@@ -26,6 +38,8 @@ const hearts = document.getElementById("hearts");
 const game = document.getElementById("game");
 const final = document.getElementById("final");
 const box = document.getElementById("box");
+const music = document.getElementById("music");
+const typedText = document.getElementById("typedText");
 
 function loadQuestion() {
   questionTitle.textContent = questions[current].title;
@@ -74,6 +88,41 @@ function openBox() {
   game.classList.add("hidden");
   final.classList.remove("hidden");
   hearts.textContent = "♥ ♥ ♥";
+  typeWriter();
 }
+
+function typeWriter() {
+  let i = 0;
+  typedText.textContent = "";
+
+  function write() {
+    if (i < finalMessage.length) {
+      typedText.textContent += finalMessage.charAt(i);
+      i++;
+      setTimeout(write, 35);
+    }
+  }
+
+  write();
+}
+
+function playMusic() {
+  music.play();
+}
+
+function createFloatingHeart() {
+  const heart = document.createElement("span");
+  heart.textContent = "❤";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+
+  document.querySelector(".floating-hearts").appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 8000);
+}
+
+setInterval(createFloatingHeart, 500);
 
 loadQuestion();
