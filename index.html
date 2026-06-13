@@ -3,29 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Caja de los Recuerdos</title>
-
-  <link rel="stylesheet" href="style.css?v=3" />
+  <title>Para Bela ❤️</title>
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
 
-  <audio id="music" loop>
+  <audio id="music" autoplay loop>
     <source src="assets/musica.mp3" type="audio/mpeg">
   </audio>
 
   <div class="floating-hearts"></div>
 
   <div class="container">
-
     <h1>La Caja de los Recuerdos</h1>
-
-    <p class="subtitle">
-      Algunos recuerdos están guardados bajo llave...
-    </p>
-
-    <button class="music-btn" onclick="playMusic()">
-      Tocar música ♫
-    </button>
+    <p class="subtitle">Algunos recuerdos están guardados bajo llave...</p>
 
     <div class="box" id="box">
       <div class="lid"></div>
@@ -33,13 +24,10 @@
       <div class="lock" id="lock">🔒</div>
     </div>
 
-    <div class="hearts" id="hearts">
-      ♡ ♡ ♡
-    </div>
+    <div class="hearts" id="hearts">♡ ♡ ♡</div>
 
     <div class="card" id="game">
       <h2 id="questionTitle">Candado 1</h2>
-
       <p id="questionText"></p>
 
       <input
@@ -48,15 +36,11 @@
         placeholder="Escribe tu respuesta..."
       />
 
-      <button onclick="checkAnswer()">
-        Intentar abrir
-      </button>
-
+      <button onclick="checkAnswer()">Intentar abrir</button>
       <p id="message"></p>
     </div>
 
     <div class="final hidden" id="final">
-
       <h2>La caja se abrió 💗</h2>
 
       <div class="photo-row">
@@ -68,12 +52,9 @@
       <p id="typedText" class="letter"></p>
 
       <h3>Sebastián</h3>
-
     </div>
-
   </div>
 
-  <script src="script.js?v=3"></script>
-
+  <script src="script.js?v=4"></script>
 </body>
 </html>

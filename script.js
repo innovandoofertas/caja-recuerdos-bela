@@ -106,9 +106,12 @@ function typeWriter() {
   write();
 }
 
-function playMusic() {
-  music.play();
-}
+window.addEventListener("load", () => {
+  music.volume = 0.5;
+  music.play().catch(() => {
+    console.log("El navegador bloqueó la reproducción automática.");
+  });
+});
 
 function createFloatingHeart() {
   const heart = document.createElement("span");
