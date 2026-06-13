@@ -29,6 +29,7 @@ Espero que esta pequeña caja pueda guardar algunos de nuestros recuerdos, pero 
 Te quiero mucho, Bela. ❤️`;
 
 let current = 0;
+let musicStarted = false;
 
 const questionTitle = document.getElementById("questionTitle");
 const questionText = document.getElementById("questionText");
@@ -40,6 +41,17 @@ const final = document.getElementById("final");
 const box = document.getElementById("box");
 const music = document.getElementById("music");
 const typedText = document.getElementById("typedText");
+
+function startMusic() {
+  if (!musicStarted) {
+    music.volume = 0.5;
+    music.play().catch(() => {});
+    musicStarted = true;
+  }
+}
+
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
 
 function loadQuestion() {
   questionTitle.textContent = questions[current].title;
@@ -57,6 +69,8 @@ function normalize(text) {
 }
 
 function checkAnswer() {
+  startMusic();
+
   const userAnswer = normalize(answerInput.value);
   const validAnswers = questions[current].answers.map(normalize);
 
@@ -105,13 +119,6 @@ function typeWriter() {
 
   write();
 }
-
-window.addEventListener("load", () => {
-  music.volume = 0.5;
-  music.play().catch(() => {
-    console.log("El navegador bloqueó la reproducción automática.");
-  });
-});
 
 function createFloatingHeart() {
   const heart = document.createElement("span");
